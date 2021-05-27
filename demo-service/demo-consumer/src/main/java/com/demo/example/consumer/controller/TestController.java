@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @description
  * @date 2021/3/24
  */
-@RestController("/test")
+@RestController
+@RequestMapping("/test")
 public class TestController {
     @Autowired
     private EchoService echoService;
-
-
 
     @RequestMapping(value = "/echo-feign/{str}", method = RequestMethod.GET)
     public String feign(@PathVariable String str) {
