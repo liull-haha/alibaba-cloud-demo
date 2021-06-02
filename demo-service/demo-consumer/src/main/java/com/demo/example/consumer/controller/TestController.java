@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/3/24
  */
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/consumer")
 public class TestController {
     @Autowired
     private EchoService echoService;

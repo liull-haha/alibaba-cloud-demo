@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/3/20
  */
 @RestController
+@RequestMapping("/provider")
 public class EchoController {
 
     @Value("${server.port}")

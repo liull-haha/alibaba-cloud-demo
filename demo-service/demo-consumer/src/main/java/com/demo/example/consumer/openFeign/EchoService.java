@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "demo-provider")
 public interface EchoService {
 
-    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
+    @RequestMapping(value = "/provider/echo/{string}", method = RequestMethod.GET)
     public String echo(@PathVariable String string);
 
 }
