@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.100.76.176:8848
+# data-id 格式：${prefix}-${spring.profiles.active}.${file-extension}
