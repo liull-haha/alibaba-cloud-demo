@@ -32,7 +32,7 @@ public class serviceLogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         // 打印请求相关参数
-        log.info("请求开始=================================");
+        log.info("请求开始====================================");
         // 打印请求 url
         log.info("URL       : {}", request.getRequestURL().toString());
         // 打印 Http method
