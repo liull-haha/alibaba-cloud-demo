@@ -11,6 +11,7 @@
         <module>../demo-gateway</module>
         <module>../demo-common</module>
         <module>../demo-generator</module>
+        <module>../demo-service/demo-redis</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -31,6 +32,7 @@
         <druid-version>1.1.23</druid-version>
         <mybatis-version>2.2.0</mybatis-version>
         <mybatis-generator.version>1.4.0</mybatis-generator.version>
+        <commons-pool2-version>2.9.0</commons-pool2-version>
     </properties>
 
     <dependencies>
@@ -94,6 +96,11 @@
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
                 <version>${mybatis-generator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

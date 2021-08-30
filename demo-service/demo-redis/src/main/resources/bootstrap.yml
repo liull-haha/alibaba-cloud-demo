@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-redis
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.100.76.176:8848
