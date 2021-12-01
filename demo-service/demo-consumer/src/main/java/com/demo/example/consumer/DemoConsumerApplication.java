@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
+@ComponentScan("com.demo.example")
 public class DemoConsumerApplication {
 
     public static void main(String[] args) {

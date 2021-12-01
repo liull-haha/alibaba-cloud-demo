@@ -1,4 +1,4 @@
-package com.demo.example.provider;
+package com.demo.example.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,15 +8,13 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * @author liull
  * @description
- * @date 2021/3/20
+ * @date 2021/8/30
  */
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan("com.demo.example")
-public class DemoProviderApplication {
-
+public class DemoSecurityApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DemoProviderApplication.class,args);
+        SpringApplication.run(DemoSecurityApplication.class);
     }
-
 }

@@ -12,6 +12,9 @@
         <module>../demo-common</module>
         <module>../demo-generator</module>
         <module>../demo-service/demo-redis</module>
+        <module>../demo-service/demo-security</module>
+        <module>../demo-service/demo-provider</module>
+        <module>../demo-service/demo-consumer</module>
     </modules>
     <packaging>pom</packaging>
 

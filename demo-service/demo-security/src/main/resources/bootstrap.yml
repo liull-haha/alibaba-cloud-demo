@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-security
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.100.76.176:8848
