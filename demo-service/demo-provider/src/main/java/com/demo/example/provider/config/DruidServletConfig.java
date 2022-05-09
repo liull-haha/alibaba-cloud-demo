@@ -1,3 +1,4 @@
+/*
 package com.demo.example.provider.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
@@ -12,11 +13,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * @author liull
  * @description
  * @date 2021/6/8
- */
+ *//*
+
 @Configuration
 public class DruidServletConfig {
 
@@ -48,3 +51,4 @@ public class DruidServletConfig {
         return  bean;
     }
 }
+*/
