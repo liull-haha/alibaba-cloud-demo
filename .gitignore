@@ -1,13 +1,4 @@
 *.iml
 .idea
-demo-common/src/main/resources/
-demo-common/src/test/
-demo-common/target/
-demo-gateway/src/test/
-demo-gateway/target/
-demo-parent/src/
-demo-service/demo-consumer/src/test/
-demo-service/demo-consumer/target/
-demo-service/demo-provider/src/test/
-demo-service/demo-provider/target/
-demo-generator/target/
+**/target/
+**/test/

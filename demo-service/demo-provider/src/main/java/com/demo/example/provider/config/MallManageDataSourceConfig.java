@@ -1,3 +1,4 @@
+/*
 package com.demo.example.provider.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -15,24 +16,30 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 import java.io.IOException;
 
+*/
 /**
  * @author liull
  * @description
  * @date 2021/6/3
- */
+ *//*
+
 @Configuration
 @Data
 @MapperScan(basePackages = MallManageDataSourceConfig.PACKAGE,sqlSessionFactoryRef = "mallManageSqlSessionFactory")
 public class MallManageDataSourceConfig {
 
-    /**
+    */
+/**
      * dao层的包路径
-     */
+     *//*
+
     static final String PACKAGE = "com.demo.example.provider.dao";
 
-    /**
+    */
+/**
      * mapper文件的相对路径
-     */
+     *//*
+
     private static final String MAPPER_LOCATION = "classpath:mapper/*.xml";
 
     @Bean("mallManageDataSource")
@@ -56,3 +63,4 @@ public class MallManageDataSourceConfig {
     }
 
 }
+*/

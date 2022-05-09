@@ -30,7 +30,7 @@
         <spring-cloud-alibaba-version>2.2.5.RELEASE</spring-cloud-alibaba-version>
         <lombok-version>1.18.20</lombok-version>
         <fastjson-version>1.2.76</fastjson-version>
-        <demo-common-version>1.0-SNAPSHOT</demo-common-version>
+        <demo-common-version>1.0.0-SNAPSHOT</demo-common-version>
         <mysql-version>5.1.47</mysql-version>
         <druid-version>1.1.23</druid-version>
         <mybatis-version>2.2.0</mybatis-version>
