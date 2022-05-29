@@ -24,8 +24,8 @@ public class RedisConfig {
         RedisTemplate<String,Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         //使用utf-8编码，防止中文乱码
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setKeySerializer(RedisSerializer.string());
+        redisTemplate.setHashKeySerializer(RedisSerializer.string());
         redisTemplate.setValueSerializer(redisSerializer());
         redisTemplate.setHashValueSerializer(redisSerializer());
         redisTemplate.afterPropertiesSet();

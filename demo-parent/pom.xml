@@ -36,6 +36,8 @@
         <mybatis-version>2.2.0</mybatis-version>
         <mybatis-generator.version>1.4.0</mybatis-generator.version>
         <commons-pool2-version>2.9.0</commons-pool2-version>
+        <hutool-version>5.7.17</hutool-version>
+        <mybatis-plus-version>3.4.3</mybatis-plus-version>
     </properties>
 
     <dependencies>
@@ -53,6 +55,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool-version}</version>
         </dependency>
     </dependencies>
 
@@ -89,16 +96,21 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-version}</version>
             </dependency>
-            <!-- MyBatis 生成器 -->
+            &lt;!&ndash; MyBatis 生成器 &ndash;&gt;
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
                 <version>${mybatis-generator.version}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>

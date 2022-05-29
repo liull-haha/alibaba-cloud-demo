@@ -1,17 +1,16 @@
 server:
-  port: 18083
+  port: 8081
 
 spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
   redis:
     password: 654321
-    cluster:
-      nodes:
-        - 101.43.204.166:1001
-        - 101.43.204.166:1002
-        - 101.43.204.166:1003
-        - 124.222.74.164:1004
-        - 124.222.74.164:1005
-        - 124.222.74.164:1006
+    host: 101.43.204.166
+    port: 6379
     lettuce:
       pool:
         # 连接池最大连接数
@@ -24,3 +23,8 @@ spring:
         max-wait: 60000
 
 
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.demo.example.redis.mapper: debug
