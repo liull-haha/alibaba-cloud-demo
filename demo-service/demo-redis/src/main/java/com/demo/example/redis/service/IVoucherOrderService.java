@@ -1,6 +1,7 @@
 package com.demo.example.redis.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.demo.example.redis.dto.Result;
 import com.demo.example.redis.entity.VoucherOrder;
 
 /**
@@ -13,4 +14,5 @@ import com.demo.example.redis.entity.VoucherOrder;
  */
 public interface IVoucherOrderService extends IService<VoucherOrder> {
 
+    Result seckillVoucher(Long voucherId);
 }
