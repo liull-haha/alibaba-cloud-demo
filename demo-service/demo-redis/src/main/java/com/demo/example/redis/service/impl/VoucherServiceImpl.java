@@ -7,6 +7,8 @@ import com.demo.example.redis.entity.Voucher;
 import com.demo.example.redis.mapper.VoucherMapper;
 import com.demo.example.redis.service.ISeckillVoucherService;
 import com.demo.example.redis.service.IVoucherService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,9 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
     @Resource
     private ISeckillVoucherService seckillVoucherService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     public Result queryVoucherOfShop(Long shopId) {
         // 查询优惠券信息
@@ -36,7 +41,7 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
     }
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void addSeckillVoucher(Voucher voucher) {
         // 保存优惠券
         save(voucher);
@@ -47,5 +52,8 @@ public class VoucherServiceImpl extends ServiceImpl<VoucherMapper, Voucher> impl
         seckillVoucher.setBeginTime(voucher.getBeginTime());
         seckillVoucher.setEndTime(voucher.getEndTime());
         seckillVoucherService.save(seckillVoucher);
+        //保存秒杀库存到redis
+        stringRedisTemplate.opsForValue()
+                .set("seckill:stock:"+voucher.getId(),voucher.getStock().toString());
     }
 }

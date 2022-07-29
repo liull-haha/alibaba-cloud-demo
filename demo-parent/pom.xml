@@ -38,6 +38,7 @@
         <commons-pool2-version>2.9.0</commons-pool2-version>
         <hutool-version>5.7.17</hutool-version>
         <mybatis-plus-version>3.4.3</mybatis-plus-version>
+        <redisson-version>3.17.4</redisson-version>
     </properties>
 
     <dependencies>
@@ -96,17 +97,6 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-version}</version>
             </dependency>
-            <!--<dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-version}</version>
-            </dependency>
-            &lt;!&ndash; MyBatis 生成器 &ndash;&gt;
-            <dependency>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-core</artifactId>
-                <version>${mybatis-generator.version}</version>
-            </dependency>-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -116,6 +106,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-pool2</artifactId>
                 <version>${commons-pool2-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

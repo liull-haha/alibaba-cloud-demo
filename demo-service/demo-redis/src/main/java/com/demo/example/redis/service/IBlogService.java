@@ -1,6 +1,7 @@
 package com.demo.example.redis.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.demo.example.redis.dto.Result;
 import com.demo.example.redis.entity.Blog;
 
 /**
@@ -13,4 +14,5 @@ import com.demo.example.redis.entity.Blog;
  */
 public interface IBlogService extends IService<Blog> {
 
+    Result queryBolg(Long id);
 }

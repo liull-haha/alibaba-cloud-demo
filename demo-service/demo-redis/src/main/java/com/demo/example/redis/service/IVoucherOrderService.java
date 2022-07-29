@@ -15,4 +15,8 @@ import com.demo.example.redis.entity.VoucherOrder;
 public interface IVoucherOrderService extends IService<VoucherOrder> {
 
     Result seckillVoucher(Long voucherId);
+
+    Result seckillVoucherBySync(Long voucherId);
+
+    Result createVoucherOrder(Long voucherId);
 }
