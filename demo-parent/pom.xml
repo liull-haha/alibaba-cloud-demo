@@ -34,7 +34,6 @@
         <mysql-version>5.1.47</mysql-version>
         <druid-version>1.1.23</druid-version>
         <mybatis-version>2.2.0</mybatis-version>
-        <mybatis-generator.version>1.4.0</mybatis-generator.version>
         <commons-pool2-version>2.9.0</commons-pool2-version>
         <hutool-version>5.7.17</hutool-version>
         <mybatis-plus-version>3.4.3</mybatis-plus-version>
