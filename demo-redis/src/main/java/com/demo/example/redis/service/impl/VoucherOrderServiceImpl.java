@@ -8,13 +8,11 @@ import com.demo.example.redis.mapper.VoucherOrderMapper;
 import com.demo.example.redis.service.ISeckillVoucherService;
 import com.demo.example.redis.service.IVoucherOrderService;
 import com.demo.example.redis.utils.RedisIdWorker;
-import com.demo.example.redis.utils.SimpleRedisLock;
 import com.demo.example.redis.utils.UserHolder;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Service;
@@ -114,8 +112,8 @@ public class VoucherOrderServiceImpl extends ServiceImpl<VoucherOrderMapper, Vou
     public Result createVoucherOrder(Long voucherId){
         //一人一单
         Long userId = UserHolder.getUser().getId();
-        Integer count = query().eq("user_id", userId).eq("voucher_id", voucherId).count();
-        if(count>1){
+        Long count = query().eq("user_id", userId).eq("voucher_id", voucherId).count();
+        if(count>1L){
             return Result.fail("每人限购一张");
         }
         //扣减库存

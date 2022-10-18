@@ -8,13 +8,13 @@
     <artifactId>demo-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>../demo-gateway</module>
-        <module>../demo-common</module>
-        <module>../demo-generator</module>
-        <module>../demo-service/demo-redis</module>
-        <module>../demo-service/demo-security</module>
-        <module>../demo-service/demo-provider</module>
-        <module>../demo-service/demo-consumer</module>
+        <module>demo-gateway</module>
+        <module>demo-common</module>
+        <module>demo-generator</module>
+        <module>demo-redis</module>
+        <module>demo-security</module>
+        <module>demo-provider</module>
+        <module>demo-consumer</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -26,8 +26,8 @@
     </parent>
 
     <properties>
-        <spring-cloud-version>Hoxton.SR8</spring-cloud-version>
-        <spring-cloud-alibaba-version>2.2.5.RELEASE</spring-cloud-alibaba-version>
+        <spring-cloud-version>Hoxton.SR9</spring-cloud-version>
+        <spring-cloud-alibaba-version>2.2.6.RELEASE</spring-cloud-alibaba-version>
         <lombok-version>1.18.20</lombok-version>
         <fastjson-version>1.2.76</fastjson-version>
         <demo-common-version>1.0.0-SNAPSHOT</demo-common-version>
@@ -36,8 +36,8 @@
         <mybatis-version>2.2.0</mybatis-version>
         <commons-pool2-version>2.9.0</commons-pool2-version>
         <hutool-version>5.7.17</hutool-version>
-        <mybatis-plus-version>3.4.3</mybatis-plus-version>
-        <redisson-version>3.17.4</redisson-version>
+        <mybatis-plus-version>3.5.2</mybatis-plus-version>
+        <redisson-version>3.17.7</redisson-version>
     </properties>
 
     <dependencies>
@@ -48,18 +48,15 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok-version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fastjson-version}</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>${hutool-version}</version>
         </dependency>
     </dependencies>
 
@@ -110,6 +107,22 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
                 <version>${redisson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
