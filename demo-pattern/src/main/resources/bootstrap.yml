@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-pattern
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.74.164:8848
