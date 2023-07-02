@@ -1,0 +1,18 @@
+server:
+  port: 18000
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 是否和服务注册与发现组件结合，设置为 true 后可以直接使用应用名称调用服务
+      routes:
+        - id: demo-provider #路由ID，自定义，要求唯一
+          uri: lb://demo-provider # uri就是目标服务地址,这里使用服务名的方式，gateway会帮我们去注册中心中获取服务列表 如果没有true配置，则可配置成http://IP:port形式;uri的协议为lb，表示启用Gateway的负载均衡功能。
+          predicates:
+            - Path=/provider/**  #路径相匹配规则
+        - id: demo-consumer
+          uri: lb://demo-consumer
+          predicates:
+            - Path=/consumer/**

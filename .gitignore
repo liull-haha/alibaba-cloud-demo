@@ -1,2 +1,6 @@
-.iml
+*.iml
 .idea
+**/target/
+**/test/
+
+

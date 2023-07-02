@@ -1,0 +1,31 @@
+server:
+  port: 18081
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    stat-view-servlet:
+#      login-username: druid
+#      login-password: druid
+#    mall-manage:
+#      druid:
+#        url: jdbc:mysql://47.102.46.30:3306/mall-manage?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+#        driver-class-name: com.mysql.jdbc.Driver
+#        username: root
+#        password: VkJpNUj3+gqtHrBSEiCMEadfgXWsdgB30I7QfK9hYzVOOVH0uQKFnel0sNO6Xcv9GU3LpQeuApLljwd4vrRiJg==   #配置加密的password
+#        initial-size: 2 #初始化时建立物理连接的个数
+#        min-idle: 2  #最小连接池数量
+#        max-active: 10  #最大连接池数量
+#        max-wait: 60000  #获取连接时最大等待时间，单位毫秒\
+#        pool-prepared-statements: false #是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+#        max-pool-prepared-statement-per-connection-size: -1 #要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true
+#        validation-query: select 1 #用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'
+#        validation-query-timeout: 60 #单位：秒，检测连接是否有效的超时时间
+#        test-while-idle: true #申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+#        test-on-borrow: false
+#        test-on-return: false
+#        time-between-eviction-runs-millis: 60000 #如果连接空闲时间大于等于minEvictableIdleTimeMillis则关闭物理连接
+#        min-evictable-idle-time-millis: 300000 #连接保持空闲而不被驱逐的最小时间
+#        filters: stat,wall,slf4j,config  #监控统计用的filter:stat；日志用的filter:log4j；防御sql注入的filter:wall；
+#        connectionProperties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAN4gMmxiGisilqyZFVUcoXcWmvP8l1zL4fjbmQBQc3SA8zRsbBLMUbYx4B9hQ37FlvWS1gpsMC6CP1ISUvGlm80CAwEAAQ==;  #java -cp H:\maven_repository_local\com\alibaba\druid\1.1.23\druid-1.1.23.jar com.alibaba.druid.filter.config.ConfigTools 123456  配置publicKey
+#        keep-alive: true #连接池中的minIdle数量以内的连接，空闲时间超过minEvictableIdleTimeMillis，则会执行keepAlive操作
+
