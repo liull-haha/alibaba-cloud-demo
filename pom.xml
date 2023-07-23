@@ -15,6 +15,7 @@
         <module>demo-security</module>
         <module>demo-provider</module>
         <module>demo-consumer</module>
+        <module>demo-pattern</module>
     </modules>
     <packaging>pom</packaging>
 
