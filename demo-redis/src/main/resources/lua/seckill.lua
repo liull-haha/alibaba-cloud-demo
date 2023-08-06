@@ -7,7 +7,7 @@
 local voucherId = ARGV[1]
 local userId = ARGV[2]
 
--- 数据key：库存key，订单key
+-- 数据key：库存key，订单key ..代表拼接
 local stockKey = 'seckill:stock:' .. voucherId
 local orderKey = 'seckill:order:' .. voucherId
 
