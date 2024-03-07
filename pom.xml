@@ -16,6 +16,7 @@
         <module>demo-provider</module>
         <module>demo-consumer</module>
         <module>demo-pattern</module>
+        <module>demo-rocketmq</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -42,10 +43,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

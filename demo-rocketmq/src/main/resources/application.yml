@@ -1,0 +1,15 @@
+server:
+  port: 8082
+#rocketmq:
+#  name-server: 124.222.74.164:9876
+#  producer:
+#    group: prod-group01
+#  consumer:
+#    group: test-consumer01
+#    topic: test-topic01
+
+rocketmq:
+  name-server: 124.222.74.164:9876
+  producer-group: prod-group01
+  consumer-group: test-consumer01
+
