@@ -17,6 +17,7 @@
         <module>demo-consumer</module>
         <module>demo-pattern</module>
         <module>demo-rocketmq</module>
+        <module>demo-elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -40,6 +41,8 @@
         <hutool-version>5.7.17</hutool-version>
         <mybatis-plus-version>3.5.2</mybatis-plus-version>
         <redisson-version>3.17.7</redisson-version>
+        <java-version>1.8</java-version>
+        <elasticsearch.version>7.12.1</elasticsearch.version>
     </properties>
 
     <dependencies>
@@ -130,6 +133,11 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
