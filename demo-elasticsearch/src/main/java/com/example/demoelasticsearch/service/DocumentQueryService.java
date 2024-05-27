@@ -15,5 +15,17 @@ public interface DocumentQueryService {
 
     SearchResponse queryBool() throws IOException;
 
-    void handleResponse(SearchResponse searchResponse);
+    SearchResponse pagingAndSortQuery() throws IOException;
+
+    SearchResponse highlightQuery() throws IOException;
+
+    SearchResponse functionScoreQuery() throws IOException;
+
+    SearchResponse aggegationQuery() throws IOException;
+
+    void handleSourceResponse(SearchResponse searchResponse);
+
+    void handleHighlightResponse(SearchResponse searchResponse);
+
+    void handleAggregationResponse(SearchResponse searchResponse);
 }
