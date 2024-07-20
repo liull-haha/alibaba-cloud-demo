@@ -23,9 +23,13 @@ public interface DocumentQueryService {
 
     SearchResponse aggegationQuery() throws IOException;
 
+    SearchResponse suggestQuery() throws IOException;
+
     void handleSourceResponse(SearchResponse searchResponse);
 
     void handleHighlightResponse(SearchResponse searchResponse);
 
     void handleAggregationResponse(SearchResponse searchResponse);
+
+    void handleSuggestResponse(SearchResponse searchResponse);
 }

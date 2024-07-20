@@ -132,6 +132,14 @@ class DemoElasticsearchApplicationTests {
 		documentQueryService.handleAggregationResponse(searchResponse);
 	}
 
+	@Test
+	void testSuggestQuery() throws IOException {
+		SearchResponse searchResponse = documentQueryService.suggestQuery();
+		System.out.println(searchResponse);
+		//解析结果
+		documentQueryService.handleSuggestResponse(searchResponse);
+	}
+
 	public static void main(String[] args) {
 		// 1. 读取视频文件内容到字节数组
 		byte[] videoBytes = new byte[0];

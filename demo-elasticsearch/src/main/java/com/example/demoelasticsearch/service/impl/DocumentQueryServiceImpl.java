@@ -20,6 +20,9 @@ import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
 import org.elasticsearch.search.sort.SortOrder;
+import org.elasticsearch.search.suggest.Suggest;
+import org.elasticsearch.search.suggest.SuggestBuilder;
+import org.elasticsearch.search.suggest.SuggestBuilders;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -141,6 +145,19 @@ public class DocumentQueryServiceImpl implements DocumentQueryService {
         return restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
     }
 
+    @Override
+    public SearchResponse suggestQuery() throws IOException {
+        SearchRequest searchRequest = new SearchRequest("personinfo");
+        searchRequest.source().suggest(new SuggestBuilder()
+                .addSuggestion(
+                        "titlesSuggestion",
+                        SuggestBuilders.completionSuggestion("title")
+                                .prefix("知")
+                                .skipDuplicates(true)
+                )
+        );
+        return restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+    }
 
     @Override
     public void handleSourceResponse(SearchResponse searchResponse) {
@@ -206,6 +223,25 @@ public class DocumentQueryServiceImpl implements DocumentQueryService {
                     });
                 }
             });
+       }
+   }
+
+   @Override
+   public void handleSuggestResponse(SearchResponse searchResponse) {
+       Suggest suggest = searchResponse.getSuggest();
+       if (suggest != null) {
+           Iterator<Suggest.Suggestion<? extends Suggest.Suggestion.Entry<? extends Suggest.Suggestion.Entry.Option>>> iterator = suggest.iterator();
+           while (iterator.hasNext()) {
+               Suggest.Suggestion<? extends Suggest.Suggestion.Entry<? extends Suggest.Suggestion.Entry.Option>> next = iterator.next();
+               List<? extends Suggest.Suggestion.Entry<? extends Suggest.Suggestion.Entry.Option>> entries = next.getEntries();
+               entries.forEach(entry -> {
+                   List<? extends Suggest.Suggestion.Entry.Option> options = entry.getOptions();
+                   options.forEach(option -> {
+                       String text = option.getText().string();
+                       System.out.println(text);
+                   });
+               });
+           }
        }
    }
 
